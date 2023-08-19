@@ -3,12 +3,12 @@ import streamlit as st
 # Constants for conversion
 TPA_TO_KG_YEAR = 1000.00
 KG_TO_NM3_YEAR = 11.126
-NM3_YEAR_TO_NM3_HR = 1.27 / 8760
+NM3_YEAR_TO_NM3_HR = 8760
 
 def tpa_to_nm3(tpa):
     kg_year = tpa * TPA_TO_KG_YEAR
     nm3_year = kg_year * KG_TO_NM3_YEAR
-    nm3_hr = nm3_year * NM3_YEAR_TO_NM3_HR
+    nm3_hr = nm3_year / NM3_YEAR_TO_NM3_HR
     return kg_year, nm3_year, nm3_hr
 
 st.title("TPA to NM³/year Converter")
