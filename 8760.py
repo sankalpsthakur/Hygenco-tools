@@ -1,4 +1,4 @@
-pip3 install matplotlib
+!pip3 install matplotlib
 
 import streamlit as st
 import numpy as np
