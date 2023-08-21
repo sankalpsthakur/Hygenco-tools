@@ -1,7 +1,6 @@
 
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
 
 # Title and description
 st.title('Electrolyser Vendor Evaluation: 8760')
