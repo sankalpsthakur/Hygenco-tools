@@ -55,24 +55,12 @@ if st.button('Calculate & Visualise'):
                 total_hydrogen_produced.append(np.sum(hydrogen_produced))
 
             # Plotting Rated Power by Vendor
-            plt.bar(vendors, rated_powers)
-            plt.title('Rated Power by Vendor')
-            plt.xlabel('Vendor')
-            plt.ylabel('Rated Power')
-            st.pyplot(plt.gcf())
+            st.bar_chart(pd.DataFrame({'Vendor': vendors, 'Rated Power': rated_powers}).set_index('Vendor'))
 
             # Plotting Total Electrolyser Input Power by Vendor
-            plt.bar(vendors, total_electrolyser_input_power)
-            plt.title('Total Electrolyser Input Power by Vendor')
-            plt.xlabel('Vendor')
-            plt.ylabel('Total Electrolyser Input Power')
-            st.pyplot(plt.gcf())
+            st.bar_chart(pd.DataFrame({'Vendor': vendors, 'Total Electrolyser Input Power': total_electrolyser_input_power}).set_index('Vendor'))
 
             # Plotting Total Hydrogen Produced by Vendor
-            plt.bar(vendors, total_hydrogen_produced)
-            plt.title('Total Hydrogen Produced by Vendor')
-            plt.xlabel('Vendor')
-            plt.ylabel('Total Hydrogen Produced')
-            st.pyplot(plt.gcf())
+            st.bar_chart(pd.DataFrame({'Vendor': vendors, 'Total Hydrogen Produced': total_hydrogen_produced}).set_index('Vendor'))
     except Exception as e:
         st.error(f'An error occurred: {str(e)}')
