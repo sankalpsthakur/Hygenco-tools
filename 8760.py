@@ -1,4 +1,5 @@
-import matplotlib
+pip3 install matplotlib
+
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
